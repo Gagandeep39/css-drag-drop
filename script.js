@@ -14,25 +14,35 @@ for (const empty of empties) {
 }
 
 function dragStart() {
-  console.log('Drag Start');
+  this.className += ' hold';
+  // Ensures this get executed after previous line
+  setTimeout(() => (this.className = 'invisible'), 0);
 }
 
 function dragEnd() {
-  console.log('Drag End');
+  this.className = 'fill';
 }
 
-function dragOver() {
-  console.log('Drag Over');
+// Prevents reset after event was completed
+function dragOver(e) {
+  e.preventDefault();
 }
 
-function dragEnter() {
-  console.log('Drag Enter');
+// Drag event starts
+// Shows dotted border on all boxes
+function dragEnter(e) {
+  e.preventDefault();
+  this.className += ' hovered';
 }
 
+// Set class o empty as soon as drag complet is completed from one element
+// Prevent dotte border ones the drag event as ended
 function dragLeave() {
-  console.log('Drag Leave');
+  this.className = 'empty';
 }
 
+// Add the 'fill' element inside th container where drop event ccurs
 function dragDrop() {
-  console.log('Drag Drop');
+  this.className = 'empty';
+  this.append(fill);
 }
