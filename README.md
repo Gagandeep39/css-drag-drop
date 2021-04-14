@@ -17,3 +17,4 @@
 
 ![Screenshot 1](./assets/screenshot_1.png)
 ![Screenshot 2](./assets/screenshot_2.png)
+![Screenshot 3](./assets/screenshot_3.png)
